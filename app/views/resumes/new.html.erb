@@ -1,4 +1,59 @@
-<h1>New Resume</h1>
+<div class="container">
+  <div class="row resume">
+    <div class="col-xs-4 left">
+      <div class="profile text_color">
+
+          <div class="row">
+            <div class="pic">
+
+            </div>
+          </div>
+
+          <div class="row name_container">
+            <div class="name ">
+                <span class="text_color">
+                     <%= @user.first_name %>
+                     <%= @user.last_name %>
+                </span>
+            </div>
+          </div>
+
+          <div class="row address">
+            <span >
+              <%= @user.address %>
+            </span>
+          </div>
+
+            <div class="row email">
+                <span class="">
+                  <%= @user.email %>
+                </span>
+            </div>
+
+            <div class="row phone">
+                <span class="">
+                  <%= @user.mobile_number %>
+                </span>
+            </div>
+
+            <div class="row homepage">
+                    <span>
+                        In
+                    </span>
+                    <span >
+                      <%= @user.homepage %>
+                    </span>
+            </div>
+      </div>
+
+
+    <div class="col-sm-8 right">
+
+    </div>
+</div>
+
+</div>
+<h1>New Resu22ddme</h1>
 
 <%= render 'form' %>
 

@@ -1,3 +1,50 @@
 // Place all the styles related to the resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container{
+  max-width: none !important;
+  min-width: 940px;
+}
+
+.left{
+  height:800px;
+  background-color: rgb(51,65,93);
+
+}
+
+.profile{
+
+}
+
+.resume{
+
+}
+
+.text_color{
+  color: white;
+}
+.name{
+  text-align: center
+}
+
+.name > span{
+  font-size:40px;
+  font-weight:300;
+}
+
+
+.homepage > span:first-child{
+  font-weight:bold;
+  font-size: 16px;
+}
+
+.profile .row{
+  margin-top:10px;
+  padding-left: 20px;
+}
+
+.name_container{
+  padding-left:0 !important;
+  margin-bottom:40px;
+}

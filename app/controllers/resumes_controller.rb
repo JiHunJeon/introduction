@@ -1,10 +1,12 @@
 class ResumesController < ApplicationController
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [ :index, :new, :edit, :create, :update, :destroy ]
 
   # GET /resumes
   # GET /resumes.json
   def index
     @resumes = Resume.all
+
   end
 
   # GET /resumes/1
@@ -15,6 +17,7 @@ class ResumesController < ApplicationController
   # GET /resumes/new
   def new
     @resume = Resume.new
+    @user = current_user
   end
 
   # GET /resumes/1/edit
