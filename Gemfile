@@ -27,6 +27,8 @@ gem 'thin'
 
 gem 'devise'
 gem 'therubyracer'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 # Use ActiveModel has_secure_password

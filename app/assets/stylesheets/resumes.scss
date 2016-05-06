@@ -2,15 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container{
+.resume_container{
   max-width: none !important;
   min-width: 940px;
+  min-height:800px;
 }
 
 .left{
-  height:800px;
+  min-height:800px;
+  height:auto;
   background-color: rgb(51,65,93);
+  display:block;
+}
 
+.right{
+  min-height:800px;
+  height:auto;
+  background-color: white;
+  display:block;
 }
 
 .profile{
@@ -18,7 +27,12 @@
 }
 
 .resume{
+  background-image: url('/assets/header.jpg');
 
+}
+
+.resume_container{
+  width:970px;
 }
 
 .text_color{
@@ -33,7 +47,6 @@
   font-weight:300;
 }
 
-
 .homepage > span:first-child{
   font-weight:bold;
   font-size: 16px;
@@ -47,4 +60,112 @@
 .name_container{
   padding-left:0 !important;
   margin-bottom:40px;
+}
+
+.skill{
+  margin-top: 20px;
+}
+.skill > .title{
+  padding-left:20px;
+}
+.skill > .title > span{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.skill > .line div{
+  border: 1px solid white;
+  margin-right:30px;
+}
+
+.skill > .line{
+padding: 10px 0px;
+}
+
+.field {
+  color:black;
+}
+
+//summary
+.summary{
+  margin-top: 30px;
+  text-align:  center;
+  width: 600px;
+}
+.summary > .title{
+  text-align: center;
+}
+.summary > .title > span{
+  font-size: 20px;
+  font-weight: bold;
+  color: #666666;
+}
+.summary > .line div{
+  border-top: 1px solid #666666;
+}
+
+.summary > .line {
+  padding: 10px 0px;
+}
+
+//work_history
+.work_history{
+  width: 623px;
+  padding-left:10px;
+  margin-top:20px;
+}
+
+.work_history > .title > span{
+  font-size: 20px;
+  font-weight: bold;
+  color: #666666;
+}
+.work_history > .line div{
+  border-top: 1px solid #666666;
+}
+.work_history > .line {
+  padding: 12px 0px;
+}
+
+//education
+.education{
+  width: 623px;
+  padding-left:10px;
+  margin-top: 20px;
+}
+
+.education > .title > span{
+  font-size: 20px;
+  font-weight: bold;
+  color: #666666;
+}
+.education > .line div{
+  border-top: 1px solid #666666;
+}
+.education > .line {
+  padding: 12px 0px;
+}
+
+//project
+.project{
+  width: 623px;
+  padding-left:10px;
+  margin-top: 20px;
+}
+
+.project > .title > span{
+  font-size: 20px;
+  font-weight: bold;
+  color: #666666;
+}
+.project > .line div{
+  border-top: 1px solid #666666;
+}
+.project > .line {
+  padding: 12px 0px;
+}
+
+.resumes_table{
+  color: black;
+  background-color: white;
 }

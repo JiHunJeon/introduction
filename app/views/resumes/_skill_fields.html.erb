@@ -1,0 +1,12 @@
+<fieldset>
+
+    <%= f.text_field :name, placeholder: "다룰줄 아는 기술" %>
+
+
+    <%= f.select :level,
+                     options_for_select((0..10).map { |i|
+                                          (if i.equal?0 then ['숙련도',''] else [i,i] end) }) %>
+
+  <%=  link_to  "[remove]", '#', class: 'remove_fields' %>
+
+</fieldset>

@@ -1,8 +1,10 @@
+<header>
+  <section class="container-fluid">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Resumes</h1>
+<h1>Your Resumes</h1>
 
-<table>
+<table class="table table-bordered resumes_table">
   <thead>
     <tr>
       <th>Summary</th>
@@ -23,5 +25,8 @@
 </table>
 
 <br>
-
-<%= link_to 'New Resume', new_resume_path %>
+    <%= will_paginate @resumes, renderer: BootstrapPagination::Rails  %>
+    </br>
+<%= link_to 'New Resume', new_resume_path, class: "btn btn-warning" %>
+  </section>
+</header>

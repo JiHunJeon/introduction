@@ -1,0 +1,11 @@
+<fieldset>
+
+  <%= f.text_field :name, placeholder: "교육 이름" %>
+  <%= f.date_field :started_at %>
+  <%= f.date_field :ended_at %>
+
+  <%= f.text_area :text, placeholder: "교육 내용" %>
+
+  <%=  link_to  "[remove]", '#', class: 'remove_fields' %>
+
+</fieldset>

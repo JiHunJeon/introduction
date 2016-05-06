@@ -5,18 +5,24 @@ class ResumesController < ApplicationController
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes = Resume.all
+    @resumes =  current_user.resumes.all.paginate(:page => params[:page], :per_page => 5)
 
   end
 
   # GET /resumes/1
   # GET /resumes/1.json
   def show
+    @resume = current_user.resumes.find(params[:id])
   end
+
 
   # GET /resumes/new
   def new
     @resume = Resume.new
+    @resume.skills.build
+    @resume.work_histories.build
+    @resume.educations.build
+    @resume.projects.build
     @user = current_user
   end
 
@@ -27,7 +33,7 @@ class ResumesController < ApplicationController
   # POST /resumes
   # POST /resumes.json
   def create
-    @resume = Resume.new(resume_params)
+    @resume = current_user.resumes.new(resume_params)
 
     respond_to do |format|
       if @resume.save
@@ -44,7 +50,7 @@ class ResumesController < ApplicationController
   # PATCH/PUT /resumes/1.json
   def update
     respond_to do |format|
-      if @resume.update(resume_params)
+      if current_user.resumes.update(resume_params)
         format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
         format.json { render :show, status: :ok, location: @resume }
       else
@@ -57,7 +63,7 @@ class ResumesController < ApplicationController
   # DELETE /resumes/1
   # DELETE /resumes/1.json
   def destroy
-    @resume.destroy
+    current_user.resumes.destroy
     respond_to do |format|
       format.html { redirect_to resumes_url, notice: 'Resume was successfully destroyed.' }
       format.json { head :no_content }
@@ -72,6 +78,10 @@ class ResumesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resume_params
-      params.require(:resume).permit(:summary)
+      params.require(:resume).permit(:summary,
+                                     skills_attributes: [:name, :level],
+                                     work_histories_attributes: [:name, :text, :started_at, :ended_at],
+                                     educations_attributes: [:name, :text, :started_at, :ended_at],
+      project_attributes: [:name, :text, :home_page])
     end
 end

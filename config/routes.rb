@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => {registrations: 'users/registrations'}
-  #get 'main/index'
+  #get 'mains/index'
 
-  root 'main#index'
+  root 'mains#index'
   resources :resumes
 
   # The priority is based upon order of creation: first created -> highest priority.

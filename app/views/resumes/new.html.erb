@@ -1,60 +1,98 @@
-<div class="container">
-  <div class="row resume">
-    <div class="col-xs-4 left">
-      <div class="profile text_color">
+<section class="container-fluid resume">
+  <%= form_for(@resume) do |f| %>
+      <% if @resume.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
 
-          <div class="row">
-            <div class="pic">
+            <ul>
+              <% @resume.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="container resume_container">
+        <div class="row ">
+          <div id="left" class="col-xs-4 left text_color">
+            <%= render 'resume_left' %>
+
+            <div class="skill_form">
+
+              <%= f.fields_for :skills do |builder| %>
+                  <%= render 'skill_fields', f: builder %>
+              <% end %>
+              <%= link_to_add_fields "Add Field", f, :skills %>
 
             </div>
+
           </div>
 
-          <div class="row name_container">
-            <div class="name ">
-                <span class="text_color">
-                     <%= @user.first_name %>
-                     <%= @user.last_name %>
-                </span>
+          <div id="right" class="col-xs-8 right center-block" onresize="resize();">
+                <%= render "resume_right" %>
+                <div class="field">
+                  <%= f.label :summary %><br>
+                  <%= f.text_area :summary %>
+                </div>
+
+                <div class="row work_history">
+                  <div class="col-xs-4 title">
+                    <span>Work History</span>
+                  </div>
+                  <div class="col-xs-8 line">
+                    <div></div>
+                  </div>
+                </div>
+
+            <%= f.fields_for :work_histories do |builder| %>
+                <%= render 'work_history_fields', f: builder %>
+            <% end %>
+            <%= link_to_add_fields "Add Field", f, :work_histories %>
+
+            <div class="row education">
+              <div class="col-xs-4 title">
+                <span>Education</span>
+              </div>
+              <div class="col-xs-8 line">
+                <div></div>
+              </div>
             </div>
+
+            <%= f.fields_for :educations do |builder| %>
+                <%= render 'education_fields', f: builder %>
+            <% end %>
+            <%= link_to_add_fields "Add Field", f, :educations %>
+
+            <div class="row project">
+              <div class="col-xs-4 title">
+                <span>Project</span>
+              </div>
+              <div class="col-xs-8 line">
+                <div></div>
+              </div>
+            </div>
+
+            <%= f.fields_for :projects do |builder| %>
+                <%= render 'project_fields', f: builder %>
+            <% end %>
+            <%= link_to_add_fields "Add Field", f, :projects %>
           </div>
 
-          <div class="row address">
-            <span >
-              <%= @user.address %>
-            </span>
-          </div>
 
-            <div class="row email">
-                <span class="">
-                  <%= @user.email %>
-                </span>
-            </div>
 
-            <div class="row phone">
-                <span class="">
-                  <%= @user.mobile_number %>
-                </span>
-            </div>
+        </div>
 
-            <div class="row homepage">
-                    <span>
-                        In
-                    </span>
-                    <span >
-                      <%= @user.homepage %>
-                    </span>
-            </div>
+        <div class="actions" style="margin-top:10px;">
+          <%= f.submit value: "제출하기", class: "btn btn-warning center-block" %>
+        </div>
+
+        <div class="actions">
+          <%= link_to '뒤로가기', resumes_path, class: "btn btn-info center-block" %>
+        </div>
       </div>
 
 
-    <div class="col-sm-8 right">
 
-    </div>
-</div>
 
-</div>
-<h1>New Resu22ddme</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', resumes_path %>
+  <% end %>
+</section>

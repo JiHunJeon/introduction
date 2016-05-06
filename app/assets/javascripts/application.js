@@ -11,13 +11,16 @@
 // about supported directives.
 //
 //= require classie
+//= require resumes
+
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require resume
 //= require turbolinks
+//= require twitter/bootstrap
 //= require jquery.fittext
 //= require wow.min
+
 //= require jquery.easing.min
-//= require classie
 //= require_tree ./main
 //= require_tree .
