@@ -1,6 +1,5 @@
-<header>
-  <div class="header-content">
-    <div class="header-content-inner">
+<section class="container-fluid section_background">
+  <div class="row section_container">
       <h2>Log in</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -28,7 +27,7 @@
 
       <%= render "devise/shared/links" %>
     </div>
-  </div>
-</header>
+
+</section>
 
 

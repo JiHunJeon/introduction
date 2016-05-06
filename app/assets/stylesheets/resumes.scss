@@ -26,13 +26,44 @@
 
 }
 
-.resume{
-  background-image: url('/assets/header.jpg');
-
+.pic_container > .pic{
+  text-align: center;
+  margin-top:20px;
 }
 
+.pic_container, .name_container{
+  padding-left: 0px !important;
+}
+.resume{
+  background-image: url('/assets/header.jpg');
+}
+
+.section_background{
+  background-image: url('/assets/header.jpg');
+  background-repeat: no-repeat;
+  height: 100%;
+  background-attachment:fixed;
+}
+
+.edit_user > .field > label{
+  color: #ffffff !important;
+}
+.section_container{
+  width: 940px;
+  margin: 0 auto;
+  height: 100%;
+}
+.edit_user_form_container{
+  width: 940px;
+  margin: 0 auto;
+  height: auto;
+}
+.edit_user_form_container h2, h3, p{
+  color:white
+}
 .resume_container{
   width:970px;
+
 }
 
 .text_color{
@@ -60,6 +91,7 @@
 .name_container{
   padding-left:0 !important;
   margin-bottom:40px;
+  margin-top:20px !important;
 }
 
 .skill{
