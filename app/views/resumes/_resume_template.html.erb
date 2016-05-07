@@ -1,0 +1,149 @@
+<section class="container-fluid">
+  <%= form_for(@resume) do |f| %>
+      <% if @resume.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+            <ul>
+              <% @resume.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="container resume_container">
+        <div class="row ">
+          <div id="left" class="col-xs-4 left text_color">
+            <div class="profile ">
+
+              <div class="row pic_container">
+                <div class="pic">
+                  <%= image_tag @user.image.thumb.url, class: "img-circle" %>
+                </div>
+              </div>
+
+              <div class="row name_container">
+                <div class="name ">
+                <span class="text_color">
+                     <%= @user.first_name %>
+                  <%= @user.last_name %>
+                </span>
+                </div>
+              </div>
+
+              <div class="row address">
+            <span >
+              <%= @user.address %>
+            </span>
+              </div>
+
+              <div class="row email">
+            <span class="">
+              <%= @user.email %>
+            </span>
+              </div>
+
+              <div class="row phone">
+            <span class="">
+              <%= @user.mobile_number %>
+            </span>
+              </div>
+
+              <div class="row homepage">
+            <span>
+                In
+            </span>
+            <span >
+              <%= @user.homepage %>
+            </span>
+              </div>
+            </div>
+
+            <div class="row skill">
+              <div class="col-xs-4 title">
+                <span>Skills</span>
+              </div>
+              <div class="col-xs-8 line">
+                <div></div>
+              </div>
+            </div>
+
+
+            <div class="skill_form">
+              <% @skills.each do |s| %>
+                  <%= s['name'] %>
+                  <%= s['level'] %>
+              <% end %>
+            </div>
+
+          </div>
+
+          <div id="right" class="col-xs-8 right center-block">
+            <div class="row summary center-block">
+              <div class="col-xs-4 line">
+                <div class="center-block"></div>
+              </div>
+              <div class="col-xs-4 title">
+                <span>Summary</span>
+              </div>
+              <div class="col-xs-4 line">
+                <div></div>
+              </div>
+            </div>
+
+            <div class="row work_history">
+              <div class="col-xs-4 title">
+                <span>Work History</span>
+              </div>
+              <div class="col-xs-8 line">
+                <div></div>
+              </div>
+              <div class="work_history_text">
+                <% @work_histories.each do |w| %>
+                    <%= w['name'] %>
+                    <%= w['text'] %>
+                <% end %>
+              </div>
+            </div>
+
+
+
+            <div class="row education">
+              <div class="col-xs-4 title">
+                <span>Education</span>
+              </div>
+              <div class="col-xs-8 line">
+                <div></div>
+              </div>
+            </div>
+
+
+
+            <div class="row project">
+              <div class="col-xs-4 title">
+                <span>Project</span>
+              </div>
+              <div class="col-xs-8 line">
+                <div></div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+        <div class="actions" style="margin-top:10px;">
+          <%= f.submit value: "제출하기", class: "btn btn-warning center-block" %>
+        </div>
+
+        <div class="actions">
+          <%= link_to '뒤로가기', resumes_path, class: "btn btn-info center-block" %>
+        </div>
+      </div>
+
+  <% end %>
+</section>

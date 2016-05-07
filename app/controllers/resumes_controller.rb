@@ -13,6 +13,13 @@ class ResumesController < ApplicationController
   # GET /resumes/1.json
   def show
     @resume = current_user.resumes.find(params[:id])
+
+    @education = @resume.educations.all
+    @skills = @resume.skills.all
+    @projects = @resume.projects.all
+    @work_histories = @resume.work_histories.all
+
+    @user = current_user
   end
 
 
@@ -28,6 +35,7 @@ class ResumesController < ApplicationController
 
   # GET /resumes/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /resumes
@@ -82,6 +90,6 @@ class ResumesController < ApplicationController
                                      skills_attributes: [:name, :level],
                                      work_histories_attributes: [:name, :text, :started_at, :ended_at],
                                      educations_attributes: [:name, :text, :started_at, :ended_at],
-      project_attributes: [:name, :text, :home_page])
+      projects_attributes: [:name, :text, :home_page])
     end
 end

@@ -1,9 +1,19 @@
+<header>
+  <section class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Summary:</strong>
   <%= @resume %>
+  <%= @education.each {|e| } %>
+
+  <%= @projects.each {|e| } %>
+  <%= @work_histories.each {|e| } %>
 </p>
+
+    <%= render "resume_template" %>
 
 <%= link_to 'Edit', edit_resume_path(@resume) %> |
 <%= link_to 'Back', resumes_path %>
+</section>
+</header>
