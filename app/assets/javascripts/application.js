@@ -12,7 +12,6 @@
 //
 //= require classie
 //= require resumes
-
 //= require jquery
 //= require jquery_ujs
 //= require resume

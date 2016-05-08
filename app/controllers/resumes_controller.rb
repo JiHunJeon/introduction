@@ -73,7 +73,9 @@ class ResumesController < ApplicationController
   # DELETE /resumes/1
   # DELETE /resumes/1.json
   def destroy
-    current_user.resumes.destroy
+
+   @resume =  Resume.find(params[:id]).destroy
+   #@resume.destroy
     respond_to do |format|
       format.html { redirect_to resumes_url, notice: 'Resume was successfully destroyed.' }
       format.json { head :no_content }

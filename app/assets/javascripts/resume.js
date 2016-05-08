@@ -6,3 +6,11 @@
 //    $(".left").height($('.right').height());
 //
 //});
+
+$(document).ready(function() {
+    var print = function () {
+        document.body.inerHTML = selectArea.innerHTML;
+        window.print();
+        conlsole.log("1");
+    }
+});

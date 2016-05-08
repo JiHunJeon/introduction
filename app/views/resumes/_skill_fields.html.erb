@@ -5,7 +5,8 @@
 
     <%= f.select :level,
                      options_for_select((0..10).map { |i|
-                                          (if i.equal?0 then ['숙련도',''] else [i,i] end) }, include_blank: true) %>
+                                          (if i.equal?0 then ['숙련도',''] else [i,i] end) },
+                                            include_blank: true, :selected => f.object.level) %>
 
   <%=  link_to  "[remove]", '#', class: 'remove_fields' %>
 

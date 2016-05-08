@@ -7,7 +7,9 @@
   min-width: 940px;
   min-height:800px;
 }
-
+.img-circle{
+  border:1px solid white;
+}
 .left{
   min-height:800px;
   height:auto;
@@ -105,6 +107,36 @@
   margin-top:20px !important;
 }
 
+.resume_text{
+  margin-top:60px;
+  margin-bottom:40px;
+  text-align: left;
+  padding-left:30px;
+}
+
+.resume_text > .row{
+  margin-top:20px;
+}
+
+.resume_text .date span{
+  font-size:17px;
+  color:dimgray;
+  display: inline-block;
+}
+
+.resume_text .text{
+  font-size:15px;
+}
+.resume_text .text .company{
+  font-size:17px;
+}
+
+.resume_text .text .job{
+  margin-top:5px;
+  color:dimgray;
+  display: inline-block;
+}
+
 
 .skill{
   margin-top: 20px;
@@ -123,7 +155,7 @@
 }
 
 .skill > .line{
-padding: 10px 0px;
+  padding: 10px 0px;
 }
 
 .skill_text {
@@ -163,6 +195,10 @@ padding: 10px 0px;
 
 .summary > .line {
   padding: 10px 0px;
+}
+
+.summary_text{
+  text-align: center !important;
 }
 
 //work_history
@@ -231,4 +267,292 @@ padding: 10px 0px;
 .resumes_table{
   color: black;
   background-color: white;
+}
+
+
+@media print{
+
+  .resume_container{
+    max-width: none !important;
+    min-width: 940px;
+    min-height:800px;
+  }
+
+  .left{
+    min-height:800px;
+    height:auto;
+    background-color: rgb(51,65,93) !important;
+    -webkit-print-color-adjust: exact;
+    display:block;
+  }
+
+  .right{
+    min-height:800px;
+    height:auto;
+    background-color: white !important;
+    -webkit-print-color-adjust: exact;
+    display:block;
+  }
+
+  .profile{
+
+  }
+
+  .pic_container > .pic{
+    text-align: center;
+    margin-top:20px;
+  }
+
+  .pic_container, .name_container{
+    padding-left: 0px !important;
+  }
+  .resume{
+    background-image: url('/assets/header.jpg');
+  }
+
+  .section_background{
+    background-image: url('/assets/header.jpg');
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment:fixed;
+  }
+
+  .edit_user > .field > label{
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+  }
+  .section_container{
+    width: 940px;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .edit_user_form_container{
+    width: 940px;
+    margin: 0 auto;
+    height: auto;
+  }
+  .edit_user_form_container h2, h3, p{
+    color:white !important;
+    -webkit-print-color-adjust: exact;
+  }
+  .resume_container{
+    width:970px;
+
+  }
+
+  .text_color{
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+  }
+  .name{
+    text-align: center
+  }
+
+  .right  span{
+    color:black;
+  }
+
+  .name > span{
+    font-size:40px;
+    font-weight:300;
+  }
+
+  .homepage > span:first-child{
+    font-weight:bold;
+    font-size: 16px;
+  }
+
+  .profile .row{
+    margin-top:10px;
+    padding-left: 20px;
+  }
+
+  .profile .text{
+    text-align:left;
+  }
+
+  .skill .text{
+    text-align: left;
+  }
+  .name_container{
+    padding-left:0 !important;
+    margin-bottom:40px;
+    margin-top:20px !important;
+  }
+
+  .resume_text{
+    margin-top:60px;
+    margin-bottom:40px;
+    text-align: left;
+    padding-left:30px;
+  }
+
+  .resume_text > .row{
+    margin-top:20px;
+  }
+
+  .resume_text .date span{
+    font-size:17px;
+    color:dimgray !important;
+    -webkit-print-color-adjust: exact;
+    display: inline-block;
+  }
+
+  .resume_text .text{
+    font-size:15px;
+  }
+  .resume_text .text .company{
+    font-size:17px;
+  }
+
+  .resume_text .text .job{
+    margin-top:5px;
+    color:dimgray !important;
+    -webkit-print-color-adjust: exact;
+    display: inline-block;
+  }
+
+
+  .skill{
+    margin-top: 20px;
+  }
+  .skill > .title{
+    padding-left:20px;
+  }
+  .skill > .title > span{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .skill > .line div{
+    border: 1px solid white;
+    margin-right:30px;
+  }
+
+  .skill > .line{
+    padding: 10px 0px;
+  }
+
+  .skill_text {
+    font-size:16px;
+    margin-top:40px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .skill_item{
+    margin-top:30px;
+  }
+  .skill_form fieldset{
+    color: black;
+  }
+  .field {
+    color:black;
+  }
+
+  //summary
+  .summary{
+    margin-top: 30px;
+    text-align:  center;
+    width: 600px;
+  }
+  .summary > .title{
+    text-align: center;
+  }
+  .summary > .title > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666666;
+  }
+  .summary > .line div{
+    border-top: 1px solid #666666;
+  }
+
+  .summary > .line {
+    padding: 10px 0px;
+  }
+
+  .summary_text{
+    text-align: center !important;
+  }
+
+  //work_history
+  .work_history{
+    width: 623px;
+    padding-left:10px;
+    margin-top:20px;
+  }
+  .work_history > .title{
+    text-align:left;
+    width:190px;
+  }
+  .work_history > .title > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666666;
+  }
+  .work_history > .line div{
+    border-top: 1px solid #666666;
+  }
+  .work_history > .line {
+    padding: 12px 0px;
+    width:423px;
+  }
+
+  //education
+  .education{
+    width: 623px;
+    padding-left:10px;
+    margin-top: 20px;
+  }
+
+  .education > .title > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666666;
+  }
+  .education > .line div{
+    border-top: 1px solid #666666;
+  }
+  .education > .line {
+    padding: 12px 0px;
+    padding-left: 50px;
+  }
+
+  //project
+  .project{
+    width: 623px;
+    padding-left:10px;
+    margin-top: 20px;
+  }
+
+  .project > .title > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666666;
+  }
+  .project > .line div{
+    border-top: 1px solid #666666;
+  }
+  .project > .line {
+    padding: 12px 0px;
+    padding-left: 30px;
+  }
+
+  .resumes_table{
+    color: black;
+    background-color: white !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .gly-off{
+    color:gray !important;
+    -webkit-print-color-adjust: exact;
+  }
+  .btn{
+    display:none;
+  }
+  .img-circle{
+    border:1px solid white;
+  }
 }

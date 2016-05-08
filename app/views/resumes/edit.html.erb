@@ -78,18 +78,13 @@
             <%= link_to_add_fields "Add Field", f, :projects %>
           </div>
 
-
-
         </div>
-
-        <div class="actions" style="margin-top:10px;">
-          <%= f.submit value: "제출하기", class: "btn btn-warning center-block" %>
-        </div>
-
-        <div class="actions">
-          <%= link_to '뒤로가기', resumes_path, class: "btn btn-info center-block" %>
+        <div class="actions" style="margin-top:10px;text-align: center">
+          <%= f.submit value: "제출하기", class: "btn btn-warning" %>
+          <%= link_to '뒤로가기', resumes_path, class: "btn btn-info" %>
         </div>
       </div>
+
 
   <% end %>
 </section>

@@ -4,7 +4,8 @@
 
     <%= render "resume_template" %>
 
-<%= link_to 'Edit', edit_resume_path(@resume) %> |
-<%= link_to 'Back', resumes_path %>
+<%= link_to 'Edit', edit_resume_path(@resume), class: "btn btn-warning" %>
+<%= link_to 'Back', resumes_path, class: "btn btn-info" %>
+    <input type="button" value="인쇄" onClick="print()" class="btn"/>
 </section>
 </header>
