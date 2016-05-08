@@ -5,7 +5,7 @@ class ResumesController < ApplicationController
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes =  current_user.resumes.all.paginate(:page => params[:page], :per_page => 5)
+    @resumes =  current_user.resumes.all.order('id desc').paginate(:page => params[:page], :per_page => 5)
 
   end
 
@@ -14,7 +14,7 @@ class ResumesController < ApplicationController
   def show
     @resume = current_user.resumes.find(params[:id])
 
-    @education = @resume.educations.all
+    @educations = @resume.educations.all
     @skills = @resume.skills.all
     @projects = @resume.projects.all
     @work_histories = @resume.work_histories.all
@@ -35,6 +35,7 @@ class ResumesController < ApplicationController
 
   # GET /resumes/1/edit
   def edit
+    @resume = current_user.resumes.find(params[:id])
     @user = current_user
   end
 
@@ -57,8 +58,9 @@ class ResumesController < ApplicationController
   # PATCH/PUT /resumes/1
   # PATCH/PUT /resumes/1.json
   def update
+    @resume = current_user.resumes.find(params[:id])
     respond_to do |format|
-      if current_user.resumes.update(resume_params)
+      if @resume.update(resume_params)
         format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
         format.json { render :show, status: :ok, location: @resume }
       else
@@ -86,10 +88,10 @@ class ResumesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resume_params
-      params.require(:resume).permit(:summary,
-                                     skills_attributes: [:name, :level],
-                                     work_histories_attributes: [:name, :text, :started_at, :ended_at],
-                                     educations_attributes: [:name, :text, :started_at, :ended_at],
-      projects_attributes: [:name, :text, :home_page])
+      params.require(:resume).permit(:id, :summary,
+                                     skills_attributes: [:id, :name, :level],
+                                     work_histories_attributes: [:id, :name, :text, :started_at, :ended_at],
+                                     educations_attributes: [:id, :name, :text, :started_at, :ended_at],
+      projects_attributes: [:id, :name, :text, :home_page])
     end
 end

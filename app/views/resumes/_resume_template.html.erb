@@ -25,60 +25,71 @@
 
               <div class="row name_container">
                 <div class="name ">
-                <span class="text_color">
+                <span class="text_color text">
                      <%= @user.first_name %>
                   <%= @user.last_name %>
                 </span>
                 </div>
               </div>
 
-              <div class="row address">
-            <span >
-              <%= @user.address %>
-            </span>
+              <div class="row address text">
+                <span class="text">
+                  <%= @user.address %>
+                </span>
               </div>
 
-              <div class="row email">
-            <span class="">
-              <%= @user.email %>
-            </span>
+              <div class="row email text">
+                <span class="text">
+                  <%= @user.email %>
+                </span>
               </div>
 
-              <div class="row phone">
-            <span class="">
-              <%= @user.mobile_number %>
-            </span>
+              <div class="row phone text">
+                <span class="text">
+                  <%= @user.mobile_number %>
+                </span>
               </div>
 
-              <div class="row homepage">
-            <span>
-                In
-            </span>
-            <span >
-              <%= @user.homepage %>
-            </span>
+              <div class="row homepage text">
+                <span class="text">
+                    In
+                </span>
+                <span class="text">
+                  <%= @user.homepage %>
+                </span>
               </div>
             </div>
 
-            <div class="row skill">
-              <div class="col-xs-4 title">
+            <div class="row skill ">
+              <div class="col-xs-4 title text">
                 <span>Skills</span>
               </div>
               <div class="col-xs-8 line">
                 <div></div>
               </div>
-            </div>
 
 
-            <div class="skill_form">
-              <% @skills.each do |s| %>
-                  <%= s['name'] %>
-                  <%= s['level'] %>
-              <% end %>
+              <div class=" skill_text text ">
+                <% @skills.each do |s| %>
+                    <div class="skill_item">
+                    <div><%= s['name'] %></div>
+                   <div> <% (1..10).each do |l| %>
+                        <% if l < s['level'].to_i %>
+                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <% else %>
+                             <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                            <%end%>
+                    <%end%></div>
+                    </div>
+                <% end %>
+              </div>
             </div>
+
 
           </div>
 
+
+          <!-- summary -->
           <div id="right" class="col-xs-8 right center-block">
             <div class="row summary center-block">
               <div class="col-xs-4 line">
@@ -92,6 +103,7 @@
               </div>
             </div>
 
+            <!-- work history-->
             <div class="row work_history">
               <div class="col-xs-4 title">
                 <span>Work History</span>
@@ -101,31 +113,49 @@
               </div>
               <div class="work_history_text">
                 <% @work_histories.each do |w| %>
-                    <%= w['name'] %>
-                    <%= w['text'] %>
+                   <span> <%= w['name'] %></span>
+                   <span> <%= w['text'] %></span>
+                    <span> <%= w['started_at'] %></span>
+                    <span> <%= w['ended_at'] %></span>
                 <% end %>
               </div>
             </div>
 
 
-
+            <!-- education -->
             <div class="row education">
-              <div class="col-xs-4 title">
+              <div class="col-xs-2 title">
                 <span>Education</span>
               </div>
-              <div class="col-xs-8 line">
+              <div class="col-xs-10 line">
                 <div></div>
               </div>
+              <div class="work_history_text">
+                <% @educations.each do |w| %>
+                    <span> <%= w['name'] %></span>
+                    <span> <%= w['text'] %></span>
+                    <span> <%= w['started_at'] %></span>
+                    <span> <%= w['ended_at'] %></span>
+                <% end %>
+              </div>
+
             </div>
 
 
-
+            <!-- project-->
             <div class="row project">
-              <div class="col-xs-4 title">
+              <div class="col-xs-2 title">
                 <span>Project</span>
               </div>
-              <div class="col-xs-8 line">
+              <div class="col-xs-10 line">
                 <div></div>
+              </div>
+              <div class="work_history_text">
+                <% @projects.each do |w| %>
+                    <span> <%= w['name'] %></span>
+                    <span> <%= w['text'] %></span>
+                    <span> <%= w['home_page'] %></span>
+                <% end %>
               </div>
             </div>
 
