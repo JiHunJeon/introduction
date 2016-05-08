@@ -27,7 +27,24 @@
 .profile{
 
 }
+.login_container{
+  color:white
+}
+.login_container .field{
+  color:white
+}
+textarea{
+  width:500px !important;
+  margin-top:10px;
+}
 
+fieldset .title{
+  width:200px;
+}
+
+fieldset .date{
+  width:150px;
+}
 .pic_container > .pic{
   text-align: center;
   margin-top:20px;
@@ -49,6 +66,19 @@
 
 .edit_user > .field > label{
   color: #ffffff !important;
+}
+
+.edit_user_container{
+  max-width:400px;
+}
+.edit_user_container i{
+  color:white;
+}
+.edit_user_container .field{
+  text-align: left;
+}
+.edit_user_container label, em{
+  color:white;
 }
 .section_container{
   width: 940px;

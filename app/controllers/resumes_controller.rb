@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-  before_action :set_resume, only: [:show, :edit, :update, :destroy]
+  before_action :set_resume, only: [:show_template, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [ :index, :new, :edit, :create, :update, :destroy ]
 
   # GET /resumes
@@ -47,7 +47,7 @@ class ResumesController < ApplicationController
     respond_to do |format|
       if @resume.save
         format.html { redirect_to @resume, notice: 'Resume was successfully created.' }
-        format.json { render :show, status: :created, location: @resume }
+        format.json { render :show_template, status: :created, location: @resume }
       else
         format.html { render :new }
         format.json { render json: @resume.errors, status: :unprocessable_entity }
@@ -62,7 +62,7 @@ class ResumesController < ApplicationController
     respond_to do |format|
       if @resume.update(resume_params)
         format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
-        format.json { render :show, status: :ok, location: @resume }
+        format.json { render :show_template, status: :ok, location: @resume }
       else
         format.html { render :edit }
         format.json { render json: @resume.errors, status: :unprocessable_entity }

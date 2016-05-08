@@ -1,12 +1,12 @@
 <fieldset>
 
-  <%= f.text_field :name, placeholder: "프로젝트 이름" %>
-  <%= f.text_field :home_page, placeholder: "github or url" %>
+  <%= f.text_field :name, placeholder: "프로젝트 이름", class: "form-control" %>
+  <%= f.text_field :home_page, placeholder: "github or url", class: "form-control" %>
 
   <br>
-  <%= f.text_area :text, placeholder: "프로젝트 내용" %>
+  <%= f.text_area :text, placeholder: "프로젝트 내용", class: "form-control" %>
 
 
-  <%=  link_to  "[remove]", '#', class: 'remove_fields' %>
+  <%=  link_to  "[remove]", '#', class: 'remove_fields btn btn-danger' %>
 
 </fieldset>

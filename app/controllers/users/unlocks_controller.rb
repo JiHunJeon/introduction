@@ -10,7 +10,7 @@ class User::UnlocksController < Devise::UnlocksController
   # end
 
   # GET /resource/unlock?unlock_token=abcdef
-  # def show
+  # def show_template
   #   super
   # end
 

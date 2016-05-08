@@ -123,8 +123,8 @@
                     <% @work_histories.each do |w| %>
                     <div class="row">
                       <div class="col-xs-3 date">
-                        <span> <%= w['started_at'].to_date %></span> <span>-</span> <br>
-                        <span> <%= w['ended_at'].to_date %></span>
+                        <span> <%= w['started_at'].to_date if !w['started_at'].nil?%></span> <span>-</span> <br>
+                        <span> <%= w['ended_at'].to_date if !w['ended_at'].nil?%></span>
                       </div>
                       <div class="col-xs-9 text">
                         <span class="company"> <%= w['name'] %></span><br>
@@ -149,8 +149,8 @@
                 <% @educations.each do |w| %>
                 <div class="row">
                   <div class="col-xs-3 date">
-                    <span> <%= w['started_at'].to_date %></span> <span>-</span> <br>
-                    <span> <%= w['ended_at'].to_date %></span>
+                    <span> <%= w['started_at'].to_date if !w['started_at'].nil?%></span> <span>-</span> <br>
+                    <span> <%= w['ended_at'].to_date if !w['ended'].nil?%></span>
                   </div>
                   <div class="col-xs-9 text">
                     <span class="company"> <%= w['name'] %></span><br>

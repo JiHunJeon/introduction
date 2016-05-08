@@ -1,11 +1,15 @@
 <fieldset>
 
-  <%= f.text_field :name, placeholder: "역할" %>
-  <%= f.date_field :started_at %>
-  <%= f.date_field :ended_at %>
+  <div class="form-group">
+  <%= f.text_field :name, placeholder: "역할" , class: "form-control title"%>
+    </div>
+  <div class="form-group">
+  <%= f.date_field :started_at , class: "form-control date"%>
+  </div>
+  <%= f.date_field :ended_at, class: "form-control date"  %>
 
-  <%= f.text_area :text, placeholder: "내용" %>
+  <%= f.text_area :text, placeholder: "내용", class: "form-control text" %>
 
-  <%=  link_to  "[remove]", '#', class: 'remove_fields' %>
+  <%=  link_to  "[remove]", '#', class: 'remove_fields btn btn-danger' %>
 
 </fieldset>

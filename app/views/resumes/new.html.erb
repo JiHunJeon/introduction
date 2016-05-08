@@ -1,5 +1,5 @@
 <section class="container-fluid resume">
-  <%= form_for(@resume) do |f| %>
+  <%= form_for @resume, :html => {:class =>'form-inline'} do |f| %>
       <% if @resume.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
@@ -28,11 +28,10 @@
 
           </div>
 
-          <div id="right" class="col-xs-8 right center-block" onresize="resize();">
+          <div id="right" class="col-xs-8 right center-block" >
                 <%= render "resume_right" %>
                 <div class="field">
-                  <%= f.label :summary %><br>
-                  <%= f.text_area :summary %>
+                  <%= f.text_area :summary, class: "form-control" %>
                 </div>
 
                 <div class="row work_history">
@@ -82,13 +81,14 @@
 
         </div>
 
-        <div class="actions" style="margin-top:10px;">
-          <%= f.submit value: "제출하기", class: "btn btn-warning center-block" %>
+        <div class="actions" style="margin-top:10px;text-align: center">
+          <%= f.submit value: "제출하기", class: "btn btn-warning" %>
+          <%= link_to '뒤로가기', resumes_path, class: "btn btn-info" %>
         </div>
 
-        <div class="actions">
-          <%= link_to '뒤로가기', resumes_path, class: "btn btn-info center-block" %>
-        </div>
+
+
+
       </div>
 
   <% end %>
