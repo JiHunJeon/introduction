@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506145609) do
+ActiveRecord::Schema.define(version: 20160508163911) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name",              limit: 255
+    t.string   "hiring_agent_name", limit: 255
+    t.string   "address1",          limit: 255
+    t.string   "address2",          limit: 255
+    t.string   "post_code",         limit: 255
+    t.integer  "cover_letter_id",   limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "companies", ["cover_letter_id"], name: "index_companies_on_cover_letter_id", using: :btree
+
+  create_table "cover_letters", force: :cascade do |t|
+    t.text     "text",       limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "cover_letters", ["user_id"], name: "index_cover_letters_on_user_id", using: :btree
 
   create_table "educations", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -96,6 +118,8 @@ ActiveRecord::Schema.define(version: 20160506145609) do
 
   add_index "work_histories", ["resume_id"], name: "index_work_histories_on_resume_id", using: :btree
 
+  add_foreign_key "companies", "cover_letters"
+  add_foreign_key "cover_letters", "users"
   add_foreign_key "educations", "resumes"
   add_foreign_key "projects", "resumes"
   add_foreign_key "skills", "resumes"

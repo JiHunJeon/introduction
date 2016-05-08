@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :cover_letters
   devise_for :users, :controllers => {registrations: 'users/registrations'}
   #get 'mains/index'
 
