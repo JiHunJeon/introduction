@@ -1,11 +1,15 @@
 class ResumesController < ApplicationController
   before_action :set_resume, only: [:show_template, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [ :index, :new, :edit, :create, :update, :destroy ]
+  before_action :authenticate_profile, only: [ :index ]
 
   # GET /resumes
   # GET /resumes.json
   def index
     @resumes =  current_user.resumes.all.order('id desc').paginate(:page => params[:page], :per_page => 5)
+
+
+    #render js: "alert('Hello Rails');"
 
   end
 
@@ -96,4 +100,11 @@ class ResumesController < ApplicationController
                                      educations_attributes: [:id, :name, :text, :started_at, :ended_at],
       projects_attributes: [:id, :name, :text, :home_page])
     end
+
+  def authenticate_profile
+    @user = current_user
+    if !(@user.address && @user.first_name && @user.last_name && @user.mobile_number)
+      redirect_to  controller: "users/registrations", action: "edit"
+    end
+  end
 end

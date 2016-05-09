@@ -14,8 +14,8 @@
   <!-- Custom Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag "application" , :"data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", :"data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application" , :"data-turbolinks-track" => false %>
+  <%= javascript_include_tag "application", :"data-turbolinks-track" => false %>
 
   <!-- Plugin CSS --!>
 
@@ -51,7 +51,7 @@
           <a class="page-scroll" href="#about">About</a>
         </li>
         <li>
-          <a class="page-scroll" href="#services">Services</a>
+          <a class="page-scroll" href="#services">How</a>
         </li>
 
         <li>
@@ -60,9 +60,9 @@
               <%= link_to "RESUME", resumes_path %>
             </li>
             <li>
-              <a class="page-scroll" href="#contact">Cover Letter</a>
+              <% link_to "COVER_LETTER", cover_letters_path, class: "page-scroll" %>
             </li>
-            <li> <%= link_to current_user.email, edit_user_registration_path %> </li>
+            <li> <%= link_to "Edit Profile", edit_user_registration_path %> </li>
             <li> <%= link_to "LOGOUT", destroy_user_session_path, method: :delete  %></li>
         <% else %>
             <%= link_to "로그인", new_user_session_path %>

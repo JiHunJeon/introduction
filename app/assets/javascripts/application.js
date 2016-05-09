@@ -10,16 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require classie
-//= require resumes
 //= require jquery
 //= require jquery_ujs
 //= require resume
-//= require turbolinks
 //= require twitter/bootstrap
 //= require jquery.fittext
 //= require wow.min
-
+//= require resumes
 //= require jquery.easing.min
 //= require_tree ./main
 //= require_tree .

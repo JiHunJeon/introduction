@@ -90,7 +90,7 @@ fieldset .date{
   margin: 0 auto;
   height: auto;
 }
-.edit_user_form_container h2, h3, p{
+.edit_user_form_container {
   color:white
 }
 .resume_container{
@@ -302,8 +302,11 @@ fieldset .date{
 
 @media print{
 
+  @page{size:a4;page-break-after: always;  }
+  @page a4sheet { size: 21.0cm 29.7cm }
+  .a4 { page: a4sheet; page-break-after: always }
   .resume_container{
-    max-width: none !important;
+    max-width: 100% !important;
     min-width: 940px;
     min-height:800px;
   }
@@ -361,12 +364,12 @@ fieldset .date{
     margin: 0 auto;
     height: auto;
   }
-  .edit_user_form_container h2, h3, p{
+  .edit_user_form_container  h2, h3, p{
     color:white !important;
     -webkit-print-color-adjust: exact;
   }
   .resume_container{
-    width:970px;
+    //width:970px;
 
   }
 
