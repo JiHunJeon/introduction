@@ -1,16 +1,5 @@
 <section class="container-fluid" style="padding-bottom:20px;padding-top:0px;">
-  <%= form_for(@resume) do |f| %>
-      <% if @resume.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
 
-            <ul>
-              <% @resume.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-      <% end %>
 
       <div class="container resume_container a4" id="selectArea">
         <div class="row ">
@@ -187,5 +176,5 @@
           </div>
         </div>
       </div>
-  <% end %>
+
 </section>

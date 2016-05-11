@@ -9,8 +9,10 @@
 
 $(document).ready(function() {
     var print = function () {
+
+        $('#left').height("277mm")
+
         document.body.inerHTML = selectArea.innerHTML;
         window.print();
-        conlsole.log("1");
     }
 });

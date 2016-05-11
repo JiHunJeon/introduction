@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,9 +13,7 @@
   <!-- Custom Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag "application" , :"data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", :"data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application" %>
+
   <!-- Plugin CSS --!>
 
 
@@ -41,7 +38,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand page-scroll" href="#page-top">레트로(Let me Introduce)</a>
+      <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,20 +50,11 @@
         <li>
           <a class="page-scroll" href="#services">Services</a>
         </li>
-
         <li>
-          <% if user_signed_in? %>
-            <li>
-              <%= link_to "RESUME", resumes_path %>
-            </li>
-            <li>
-              <a class="page-scroll" href="#contact">Cover Letter</a>
-            </li>
-            <li> <%= link_to current_user.email, edit_user_registration_path %> </li>
-             <li> <%= link_to "LOGOUT", destroy_user_session_path, method: :delete  %></li>
-          <% else %>
-              <%= link_to "로그인", new_user_session_path %>
-          <% end %>
+          <a class="page-scroll" href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -78,10 +66,10 @@
 <header>
   <div class="header-content">
     <div class="header-content-inner">
-      <h1>당신의 이력서에 날개를 달아드립니다!</h1>
+      <h1>Your Favorite Source of Free Bootstrap Themes</h1>
       <hr>
-      <p>여러가지 이력서 양식으로 자신만의 매력적인 이력서를 만드세요!</p>
-      <%= link_to "GO TO RESUME", resumes_path, class: "btn btn-primary btn-xl page-scroll"  %>
+      <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+      <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
     </div>
   </div>
 </header>
@@ -90,10 +78,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <h2 class="section-heading">당신이 원하는건 모두 여기있습니다!</h2>
+        <h2 class="section-heading">We've got what you need!</h2>
         <hr class="light">
-        <p class="text-faded">레트로는 당신의 이력서를 더욱더 매력적일수 있도록 도와줍니다.</p>
-        <a href="#" class="btn btn-default btn-xl">GO TO COVER LETTER</a>
+        <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+        <a href="#" class="btn btn-default btn-xl">Get Started!</a>
       </div>
     </div>
   </div>

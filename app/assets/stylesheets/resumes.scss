@@ -305,30 +305,52 @@ fieldset .date{
   @page{size:a4;page-break-after: always;  }
   @page a4sheet { size: 21.0cm 29.7cm }
   .a4 { page: a4sheet; page-break-after: always }
+  body{width: 210mm;
+    height: 297mm !important;
+    border:0; margin:0; padding:0;
+  }
+  html{width: 210mm;
+    height: 297mm !important;
+    border:0; margin:0; padding:0;
+  }
+  section{width: 210mm;
+    height: 297mm !important;
+    border:0; margin:0; padding:0;
+  }
+  header{width: 210mm;
+    height: 297mm !important;
+    border:0; margin:0; padding:0;
+  }
   .resume_container{
-    max-width: 100% !important;
-    min-width: 940px;
-    min-height:800px;
+    width: 210mm;
+    height: 297mm !important; border:0; margin:0; padding:0;
   }
 
   .left{
-    min-height:800px;
-    height:auto;
+
+
     background-color: rgb(51,65,93) !important;
     -webkit-print-color-adjust: exact;
     display:block;
+    height: 297mm !important;
   }
 
   .right{
-    min-height:800px;
-    height:auto;
+
     background-color: white !important;
     -webkit-print-color-adjust: exact;
-    display:block;
+    display:block; height: 297mm !important;
   }
 
+  .container{
+    width: 210mm;
+    height: 297mm !important; border:0; margin:0; padding:0;
+  }
   .profile{
 
+  }
+  .resume_container > .row{
+    height: 297mm !important;
   }
 
   .pic_container > .pic{
@@ -357,20 +379,14 @@ fieldset .date{
   .section_container{
     width: 940px;
     margin: 0 auto;
-    height: 100%;
+    height: 297mm !important;
   }
-  .edit_user_form_container{
-    width: 940px;
-    margin: 0 auto;
-    height: auto;
-  }
-  .edit_user_form_container  h2, h3, p{
-    color:white !important;
-    -webkit-print-color-adjust: exact;
-  }
+
   .resume_container{
     //width:970px;
-
+    border:0; margin:0; padding:0;
+    width: 210mm;
+    height: 297mm !important;
   }
 
   .text_color{
