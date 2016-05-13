@@ -10,7 +10,7 @@ re_size = () ->
 
   if height_flag
     if right_height > left_height
-      $("#left").height(right_height)
+      $("#left").css("min-height",right_height)
     else if left_height > right_height
       $("#right").height(left_height)
   else

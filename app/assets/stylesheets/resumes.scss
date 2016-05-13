@@ -332,14 +332,14 @@ fieldset .date{
     background-color: rgb(51,65,93) !important;
     -webkit-print-color-adjust: exact;
     display:block;
-    height: 297mm !important;
+    min-height:363mm !important;
   }
 
   .right{
 
     background-color: white !important;
     -webkit-print-color-adjust: exact;
-    display:block; height: 297mm !important;
+    display:block; min-height: 363mm !important;
   }
 
   .container{
