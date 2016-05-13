@@ -1,5 +1,7 @@
 class CoverLettersController < ApplicationController
   before_action :set_cover_letter, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [ :index, :new, :edit, :create, :update, :destroy ]
+#  before_action :authenticate_profile, only: [ :index ]
 
   # GET /cover_letters
   # GET /cover_letters.json
@@ -15,6 +17,8 @@ class CoverLettersController < ApplicationController
   # GET /cover_letters/new
   def new
     @cover_letter = CoverLetter.new
+    @user = current_user
+    @cover_letter.companies.build
   end
 
   # GET /cover_letters/1/edit

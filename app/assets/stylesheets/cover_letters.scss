@@ -1,3 +1,47 @@
 // Place all the styles related to the cover_letters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$text_color: black;
+
+.background{
+  background-image: url('/assets/header.jpg');
+  background-repeat: no-repeat;
+  height: 100%;
+  background-attachment:fixed;
+}
+.cover_letter_container{
+  width:970px;
+  height:100%;
+}
+.cover_letter{
+  width:970px;
+  height:100%;
+  background-color: white;
+  .title{
+    text-align: center;
+    color: $text_color;
+  }
+
+  .content{
+    text-align: center;
+    width: 970px;
+  }
+
+  .header{
+    text-align: center;
+    margin-top: 50px;
+    line-height: 1.4;
+    .name{
+      color: $text_color;
+    }
+
+    .line{
+      border-bottom: 3px solid black;
+      padding-bottom:10px;
+      width:80%;
+    }
+  }
+
+}
+
