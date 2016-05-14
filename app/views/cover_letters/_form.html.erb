@@ -1,4 +1,5 @@
 <%= form_for(@cover_letter) do |f| %>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <% if @cover_letter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cover_letter.errors.count, "error") %> prohibited this cover_letter from being saved:</h2>

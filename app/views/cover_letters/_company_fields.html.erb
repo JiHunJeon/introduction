@@ -3,9 +3,14 @@
   <%= f.text_field :name, placeholder: "회사 명", class: "form-control" %>
   <%= f.text_field :hiring_agent_name, placeholder: "담당자 명", class: "form-control" %>
   <%= f.text_field :department, placeholder: "담당부서 명", class: "form-control" %>
-  <%= f.text_field :post_code, placeholder: "우편 번호", class: "form-control" %>
+
   <div class="form-inline address">
-      <%= f.text_field :address1, placeholder: "주소1", class: "form-control" %>
-      <%= f.text_field :address2, placeholder: "주소2", class: "form-control" %>
+  <%= f.text_field :post_code, placeholder: "우편 번호",id: "post_code", class: "form-control", readonly: true %>
+
+  <input type="button" class="btn" onclick="execDaumPostcode()" value="주소찾기"/>
+  </div>
+  <div class="form-inline address">
+      <%= f.text_field :address1, placeholder: "주소1",id: "address1", class: "form-control", readonly: true %>
+      <%= f.text_field :address2, placeholder: "주소2",id: "address2", class: "form-control" %>
   </div>
 </fieldset>

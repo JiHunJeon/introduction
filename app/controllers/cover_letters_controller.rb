@@ -23,8 +23,11 @@ class CoverLettersController < ApplicationController
 
   # GET /cover_letters/1/edit
   def edit
+    @cover_letter = CoverLetter.find(params[:id])
+
+    @cover_letter.companies.build if @cover_letter.companies.last().nil?
+
     @user = current_user
-    @cover_letter.companies.build
   end
 
   # POST /cover_letters
@@ -75,6 +78,7 @@ class CoverLettersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cover_letter_params
-      params.require(:cover_letter).permit(:text)
+      params.require(:cover_letter).permit(:text,
+      companies_attributes:[:id,:name, :hiring_agent_name, :address1, :address2, :post_code,:department ])
     end
 end
