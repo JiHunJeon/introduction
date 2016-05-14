@@ -7,17 +7,17 @@ $text_color: black;
 .background{
   background-image: url('/assets/header.jpg');
   background-repeat: no-repeat;
-  height: 100%;
+  height: auto;
   background-attachment:fixed;
 }
 .cover_letter_container{
-  width:970px;
-  height:100%;
+  width: 970px;
+  height: auto;
+  background-color: white;
 }
 .cover_letter{
-  width:970px;
-  height:100%;
-  background-color: white;
+  width: 800px;
+
   .title{
     text-align: center;
     color: $text_color;
@@ -25,23 +25,44 @@ $text_color: black;
 
   .content{
     text-align: center;
-    width: 970px;
+
   }
 
   .header{
     text-align: center;
     margin-top: 50px;
     line-height: 1.4;
+
     .name{
       color: $text_color;
     }
 
     .line{
       border-bottom: 3px solid black;
-      padding-bottom:10px;
-      width:80%;
+      padding-bottom: 10px;
     }
   }
 
+  form{
+    #cover_letter_text{
+      width: 100% !important;
+    }
+
+    .date {
+      text-align: left;
+      margin-top: 30px;
+      font-size: 15px;
+    }
+
+    .company_input{
+      input{
+        width: 200px;
+        margin-top: 10px;
+      }
+      .address{
+        text-align: left;
+      }
+    }
+  }
 }
 

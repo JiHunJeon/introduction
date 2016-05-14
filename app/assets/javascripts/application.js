@@ -18,5 +18,6 @@
 //= require wow.min
 //= require resumes
 //= require jquery.easing.min
+//= require ckeditor/init
 //= require_tree ./main
 //= require_tree .

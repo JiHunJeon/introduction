@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508163911) do
+ActiveRecord::Schema.define(version: 20160514191527) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",              limit: 255
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160508163911) do
     t.integer  "cover_letter_id",   limit: 4
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "department",        limit: 255
   end
 
   add_index "companies", ["cover_letter_id"], name: "index_companies_on_cover_letter_id", using: :btree

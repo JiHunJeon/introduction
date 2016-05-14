@@ -23,6 +23,8 @@ class CoverLettersController < ApplicationController
 
   # GET /cover_letters/1/edit
   def edit
+    @user = current_user
+    @cover_letter.companies.build
   end
 
   # POST /cover_letters

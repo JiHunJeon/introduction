@@ -10,12 +10,15 @@
       </ul>
     </div>
   <% end %>
+    <div class="date">
+      <span><%= DateTime.now.strftime('%Y 년 %m 월 %d')%></span>
+    </div>
     <%= f.fields_for :companies do |builder| %>
         <%= render 'company_fields', f: builder %>
     <% end %>
 
   <div class="field">
-    <%= f.text_area :text %>
+    <%= f.cktext_area :text, class: "form-control", id: "cover_letter_text" %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-warning"  %>
