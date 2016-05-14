@@ -4,5 +4,6 @@
 - rbenv
 - Ruby on Rails(4.2.4)
 - bootstrap
+- sass
 - jquery
 - mysql
