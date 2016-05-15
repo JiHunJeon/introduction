@@ -1,29 +1,23 @@
 <section class="background">
   <div class="cover_letter_container container">
-      <div class="row cover_letter center-block">
+    <div class="row cover_letter center-block">
 
-        <div class="header">
-            <div class="name">
-              <span><%= @user.first_name + " " + @user.last_name %></span>
-            </div>
-            <div class="address">
-              <span><%= @user.address %></span>
-            </div>
-            <div class="contact">
-              <span><%= @user.mobile_number %></span>
-              <span><%= @user.email%></span>
-            </div>
-            <div class="line center-block"></div>
+      <div class="header">
+        <div class="name">
+          <span><%= @user.first_name + " " + @user.last_name %></span>
         </div>
-        <div class="content">
-            <%= render 'form' %>
+        <div class="address">
+          <span><%= @user.address %></span>
         </div>
+        <div class="contact">
+          <span><%= @user.mobile_number %></span>
+          <span><%= @user.email%></span>
+        </div>
+        <div class="line center-block"></div>
       </div>
+      <div class="content">
+        <%= render 'form' %>
+      </div>
+    </div>
   </div>
-
-
-
-
-
-<%= link_to 'Back', cover_letters_path%>
-  </section>
+</section>

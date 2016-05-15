@@ -1,11 +1,44 @@
-<header>
-  <section class="container edit_user_container">
-<p id="notice"><%= notice %></p>
+<section class="background">
+  <div class="cover_letter_container container">
+    <div class="row cover_letter center-block">
 
-<p>
-  <strong>Text:</strong>
-  <%= @cover_letter.text.html_safe %>
-</p>
+      <div class="header">
+        <div class="name">
+          <span><%= @user.first_name + " " + @user.last_name %></span>
+        </div>
+        <div class="address">
+          <span><%= @user.address %></span>
+        </div>
+        <div class="contact">
+          <span><%= @user.mobile_number %></span>
+          <span><%= @user.email%></span>
+        </div>
+        <div class="line center-block"></div>
+      </div>
+      <div class="content">
+        <div class="date">
+          <span><%= DateTime.now.strftime('%Y 년 %m 월 %d')%></span>
+        </div>
+        <div class="company">
+            <% @cover_letter.companies.each do |company| %>
+               <span> <%= company.name %> </span><br/>
+                <span><%= company.hiring_agent_name %> </span><br/>
+                <span><%= company.department %></span><br/>
+                <span><%= company.post_code %></span>
+                <span><%= company.address1 %></span><br/>
+                <span><%= company.address2 %></span>
+            <% end %>
+        </div>
+        <div class="text">
+            <%= @cover_letter.text.html_safe %>
+        </div>
+      </div>
 
-<%= link_to 'Edit', edit_cover_letter_path(@cover_letter) %> |
-<%= link_to 'Back', cover_letters_path %>
+    </div>
+  </div>
+  <div class="buttons">
+    <%= link_to 'Edit', edit_cover_letter_path(@cover_letter), class: "btn btn-warning" %>
+    <%= link_to 'Back', cover_letters_path, class: "btn btn-info"%>
+  </div>
+</section>
+

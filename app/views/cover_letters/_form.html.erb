@@ -21,7 +21,8 @@
   <div class="field">
     <%= f.cktext_area :text, class: "form-control", id: "cover_letter_text" %>
   </div>
-  <div class="actions">
-    <%= f.submit class: "btn btn-warning"  %>
+  <div class="actions text-center">
+    <%= f.submit '제출하기',class: "btn btn-warning"  %>
+    <%= link_to '뒤로가기', cover_letters_path, class: "btn btn-info" %>
   </div>
 <% end %>

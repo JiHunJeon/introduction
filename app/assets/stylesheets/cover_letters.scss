@@ -17,6 +17,7 @@ $text_color: black;
 }
 .cover_letter{
   width: 800px;
+  min-height:800px;
 
   .title{
     text-align: center;
@@ -24,7 +25,16 @@ $text_color: black;
   }
 
   .content{
-    text-align: center;
+    text-align: left;
+
+    .company{
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    .text{
+      margin-top: 30px;
+    }
 
   }
 
@@ -52,11 +62,7 @@ $text_color: black;
       margin-top:20px;
     }
 
-    .date {
-      text-align: left;
-      margin-top: 30px;
-      font-size: 15px;
-    }
+
 
     .company_input{
       input{
@@ -68,5 +74,17 @@ $text_color: black;
       }
     }
   }
+  .date {
+    text-align: left;
+    margin-top: 30px;
+    font-size: 15px;
+  }
+}
+
+
+.buttons{
+  width:100%;
+  text-align: center;
+  margin-top:30px;
 }
 
