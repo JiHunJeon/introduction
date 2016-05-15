@@ -1,5 +1,5 @@
 <section class="background">
-  <div class="cover_letter_container container">
+  <div class="cover_letter_container container" id="selectArea">
     <div class="row cover_letter center-block">
 
       <div class="header">
@@ -17,7 +17,7 @@
       </div>
       <div class="content">
         <div class="date">
-          <span><%= DateTime.now.strftime('%Y 년 %m 월 %d')%></span>
+          <span><%= DateTime.now.strftime('%Y년 %m월 %d일')%></span>
         </div>
         <div class="company">
             <% @cover_letter.companies.each do |company| %>
@@ -39,6 +39,7 @@
   <div class="buttons">
     <%= link_to 'Edit', edit_cover_letter_path(@cover_letter), class: "btn btn-warning" %>
     <%= link_to 'Back', cover_letters_path, class: "btn btn-info"%>
+    <input type="button" value="인쇄" onClick="print()" class="btn"/>
   </div>
 </section>
 

@@ -108,12 +108,13 @@ fieldset .date{
 .right  span{
   color:black;
 }
+.resume_container{
 
-.name > span{
-  font-size:40px;
-  font-weight:300;
+  .name > span{
+    font-size:40px;
+    font-weight:300;
+  }
 }
-
 .homepage > span:first-child{
   font-weight:bold;
   font-size: 16px;

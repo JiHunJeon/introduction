@@ -16,7 +16,7 @@ $text_color: black;
   background-color: white;
 }
 .cover_letter{
-  width: 800px;
+  width: 750px;
   min-height:800px;
 
   .title{
@@ -28,14 +28,16 @@ $text_color: black;
     text-align: left;
 
     .company{
-      font-size: 15px;
+      font-size: 12pt;
       margin-top: 20px;
+     span{
+       line-height: 1.4;
+     }
     }
 
     .text{
       margin-top: 30px;
     }
-
   }
 
   .header{
@@ -45,10 +47,12 @@ $text_color: black;
 
     .name{
       color: $text_color;
+      font-size: 50px !important;
+      font-weight: bold;
     }
 
     .line{
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
       padding-bottom: 10px;
     }
   }
@@ -62,8 +66,6 @@ $text_color: black;
       margin-top:20px;
     }
 
-
-
     .company_input{
       input{
         width: 200px;
@@ -74,17 +76,36 @@ $text_color: black;
       }
     }
   }
+
   .date {
     text-align: left;
     margin-top: 30px;
-    font-size: 15px;
+    font-size: 12pt;
   }
 }
-
 
 .buttons{
   width:100%;
   text-align: center;
   margin-top:30px;
 }
+
+@media print{
+    .cover_letter_container{
+      width: 210mm;
+      height: 297mm !important;
+      background-color: white;
+
+    }
+    .cover_letter{
+      padding: 1cm;
+      min-height:800px;
+
+      .header{
+        text-align: center;
+        line-height: 1.4;
+        margin:0px;
+      }
+    }
+  }
 

@@ -9,9 +9,7 @@
 
 $(document).ready(function() {
     var print = function () {
-
-        $('#left').height("2000px");
         document.body.inerHTML = selectArea.innerHTML;
-        window.print();
+        window.print(); 
     }
 });
