@@ -305,7 +305,11 @@ fieldset .date{
 @media print{
 
   @page{size:a4;page-break-after: always;  }
-  @page a4sheet { size: 21.0cm 29.7cm }
+  @page a4sheet { size: 21.0cm 29.7cm;}
+  @page {
+    size:21cm 29.7cm; /*A4*/
+    margin:0cm;
+  }
   .a4 { page: a4sheet; page-break-after: always }
   body{width: 210mm;
     height: 297mm !important;

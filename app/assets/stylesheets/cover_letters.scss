@@ -91,7 +91,12 @@ $text_color: black;
 }
 
 @media print{
-    .cover_letter_container{
+  @page {
+    size:21cm 29.7cm; /*A4*/
+    margin:1cm;
+  }
+
+  .cover_letter_container{
       width: 210mm;
       height: 297mm !important;
       background-color: white;
