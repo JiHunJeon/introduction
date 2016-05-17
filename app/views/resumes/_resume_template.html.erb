@@ -94,7 +94,7 @@
               </div>
               <div class="row summary_text resume_text">
                 <div class="col-xs-12">
-                  <span><%= @resume.summary %></span>
+                  <span style="white-space: pre-line"><%= @resume.summary %></span>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@
                 <div class="row">
                   <div class="col-xs-3 date">
                     <span> <%= w['started_at'].to_date if !w['started_at'].nil?%></span> <span>-</span> <br>
-                    <span> <%= w['ended_at'].to_date if !w['ended'].nil?%></span>
+                    <span> <%= w['ended_at'].to_date if !w['ended_at'].nil?%></span>
                   </div>
                   <div class="col-xs-9 text">
                     <span class="company"> <%= w['name'] %></span><br>

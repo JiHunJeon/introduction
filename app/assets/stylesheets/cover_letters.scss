@@ -93,7 +93,7 @@ $text_color: black;
 @media print{
   @page {
     size:21cm 29.7cm; /*A4*/
-    margin:1cm;
+    margin:0cm;
   }
 
   .cover_letter_container{
@@ -103,7 +103,7 @@ $text_color: black;
 
     }
     .cover_letter{
-      padding: 1cm;
+      padding: 2cm;
       min-height:800px;
 
       .header{

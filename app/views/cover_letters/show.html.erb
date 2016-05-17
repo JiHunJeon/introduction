@@ -1,6 +1,6 @@
 <section class="background">
-  <div class="cover_letter_container container" id="selectArea">
-    <div class="row cover_letter center-block">
+  <div class="cover_letter_container container" >
+    <div class="row cover_letter center-block" id="selectArea" >
 
       <div class="header">
         <div class="name">
@@ -40,6 +40,7 @@
     <%= link_to 'Edit', edit_cover_letter_path(@cover_letter), class: "btn btn-warning" %>
     <%= link_to 'Back', cover_letters_path, class: "btn btn-info"%>
     <input type="button" value="인쇄" onClick="print()" class="btn"/>
+    <a href="#" id='pdf_down_btn' class="btn">PDF</a>
   </div>
 </section>
 
